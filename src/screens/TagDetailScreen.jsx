@@ -6,9 +6,9 @@ const TagDetailScreen = () => {
   const {id} = useParams();
     
   useEffect(() => {
-    fetch(`http://blog.api/tag/${id}`)
+    fetch(`http://blog.api/theme/${id}`)
       .then(resp => resp.json())
-      .then(json => {              
+      .then(json => {
         setTag(json);
       });
   }, [id])
@@ -17,10 +17,10 @@ const TagDetailScreen = () => {
     <h1>Liste des mots-clés: {id}</h1>
     <table className="table table-striped">
       <thead>
-          <tr>
-              <th>Id</th>
-              <th>Title</th>
-          </tr>
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+        </tr>
       </thead>
       <tbody>
         {tag && 
